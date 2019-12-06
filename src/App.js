@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.projects)
+    console.log(this.state.projects, 'correct url!!!')
     return (
       <div className="App">
         <Project />
