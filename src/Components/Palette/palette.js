@@ -19,10 +19,17 @@ export class Palette extends Component {
   }
 
   generateColor = () => {
-    console.log('generate')
-    console.log('#'+(Math.random()*0xFFFFFF<<0).toString(16))
-    let color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
-    this.setState({ color1: color})
+    let color1 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+    this.setState({ color1: color1})
+    let color2 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+    this.setState({ color2: color2})
+    let color3 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+    this.setState({ color3: color3})
+    let color4 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+    this.setState({ color4: color4})
+    let color5 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+    this.setState({ color5: color5})
+
   }
 
 

@@ -4,7 +4,6 @@ import '../Nav/Nav.scss'
 
 
 export const Nav = (props) => {
- console.log(props)
   return(
     <section className="nav-page">
     <button className="nav__button--show">Show Palettes</button>
