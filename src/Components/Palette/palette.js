@@ -84,6 +84,7 @@ export class Palette extends Component {
       <Nav generateColor = {this.generateColor}/>
      
       <Colors 
+        copyHex={this.copyHex}
         lockColor={this.lockColor}
         color1={this.state.color1}
         color2={this.state.color2}
