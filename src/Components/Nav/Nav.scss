@@ -1,0 +1,18 @@
+
+.nav-page{
+  display: flex;
+  justify-content: space-around;
+  height: 16vh;
+  align-items: center;
+}
+
+.nav__div--gen {
+  display: flex;
+  flex-direction: column
+}
+
+.nav__button--show {
+  width: 20%;
+  height: 6vh;
+
+}
