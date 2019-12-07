@@ -18,23 +18,44 @@ export class Palette extends Component {
     }
   }
 
+  generateRandomColor = () => {
+    return '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+  }
+
   generateColor = () => {
-    let color1 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
-    // this.setState({ color1: color1})
-    this.setState(prevState => ({
+    if(!this.state.color1.isLocked) {
+      this.setState(prevState => ({
       color1: {                   
           ...prevState.color1,    
-          hex: color1
+          hex: this.generateRandomColor()
       }
-  }))
-    let color2 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
-    this.setState({ color2: color2})
-    let color3 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
-    this.setState({ color3: color3})
-    let color4 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
-    this.setState({ color4: color4})
-    let color5 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
-    this.setState({ color5: color5})
+    }))
+  }
+
+    this.setState(prevState => ({
+      color2: {                   
+          ...prevState.color2,    
+         hex: this.generateRandomColor()
+      }
+    }))
+    this.setState(prevState => ({
+      color3: {                   
+          ...prevState.color3,    
+          hex: this.generateRandomColor()
+      }
+   }))
+    this.setState(prevState => ({
+      color4: {                   
+          ...prevState.color4,    
+          hex: this.generateRandomColor()
+      }
+    }))
+    this.setState(prevState => ({
+      color5: {                   
+          ...prevState.color5,    
+          hex: this.generateRandomColor()
+      }
+    }))
   }
 
   lockColor = () => {
@@ -54,6 +75,8 @@ export class Palette extends Component {
   }))
   }
   }
+
+
   render() {
     return(
       <section className="palette-page">
