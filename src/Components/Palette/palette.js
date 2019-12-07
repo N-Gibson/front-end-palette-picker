@@ -18,12 +18,19 @@ export class Palette extends Component {
     }
   }
 
+  generateColor = () => {
+    console.log('generate')
+    console.log('#'+(Math.random()*0xFFFFFF<<0).toString(16))
+    let color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+    this.setState({ color1: color})
+  }
+
 
   render() {
     return(
       <section className="palette-page">
          <h4 className="title">Palette Picker</h4>
-      <Nav />
+      <Nav generateColor = {this.generateColor}/>
      
       <Colors 
         color1={this.state.color1}

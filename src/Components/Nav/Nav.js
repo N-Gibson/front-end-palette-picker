@@ -3,13 +3,14 @@ import Form from '../Form/Form';
 import '../Nav/Nav.scss'
 
 
-export const Nav = () => {
+export const Nav = (props) => {
+ console.log(props)
   return(
     <section className="nav-page">
     <button className="nav__button--show">Show Palettes</button>
     <div className="nav__div--gen">
     <h1>Project Name</h1>
-    <button>Generate</button>
+    <button onClick={props.generateColor}>Generate</button>
     </div>
     <Form />
     </section>
