@@ -29,7 +29,6 @@ export class Palette extends Component {
     this.setState({ color4: color4})
     let color5 = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
     this.setState({ color5: color5})
-
   }
 
 
