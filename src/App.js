@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Project from './Project/project';
 import { getProjects } from './apiCalls';
 import './App.css';
+import Palette from './Components/Palette/palette'
 
 class App extends Component {
   constructor() {
@@ -25,7 +26,10 @@ class App extends Component {
     console.log(this.state.projects)
     return (
       <div className="App">
-        <Project />
+        {/* <Project /> */}
+        {/* <Route exact path='/palette' render={() => 
+          <Palette key={Date.now()} />}/> */}
+          <Palette />
       </div>
     );
   }
