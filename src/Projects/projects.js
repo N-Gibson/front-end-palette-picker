@@ -28,8 +28,10 @@ class Projects extends Component {
   handleClick = async () => {
     // Change the inner text of the project to the value of state.
       // Identify which one to change & select that one.
-    console.log(await postProject())
-    this.setState({ projectName: ''});
+    if(this.state.projectName) {
+      postProject(this.state.projectName);
+      this.setState({ projectName: ''});
+    }
   }
 
   render() {
