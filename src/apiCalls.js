@@ -6,3 +6,8 @@ export const getProjects = async () => {
   const data = await response.json();
   return data
 }
+
+export const postProject = async (projectName) => {
+  const url = process.env;
+  console.log(url)
+}

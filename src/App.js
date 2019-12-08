@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Project from './Project/project';
-import { getProjects } from './apiCalls';
+import Projects from './Projects/projects';
 import './App.css';
 
 class App extends Component {
@@ -8,24 +7,13 @@ class App extends Component {
     super()
     this.state = {
       error: '',
-      projects: [],
-    }
-  }
-
-  async componentDidMount() {
-    try {
-      const projects = await getProjects();
-      this.setState({ projects: projects })
-    } catch (error) {
-      this.setState({ error: error })
     }
   }
 
   render() {
-    console.log(this.state.projects)
     return (
       <div className="App">
-        <Project />
+        <Projects />
       </div>
     );
   }
