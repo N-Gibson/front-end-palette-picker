@@ -26,8 +26,6 @@ class Projects extends Component {
   }
 
   handleClick = async () => {
-    // Change the inner text of the project to the value of state.
-      // Identify which one to change & select that one.
     if(this.state.projectName) {
       postProject(this.state.projectName);
       this.setState({ projectName: ''});
@@ -50,7 +48,6 @@ class Projects extends Component {
           </input>
           <button 
             className='project-button' 
-            type='button'
             onClick={this.handleClick}>
             Save
           </button>
