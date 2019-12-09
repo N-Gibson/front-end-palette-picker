@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Projects from './Projects/projects';
+import { Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Projects />
+      <Route exact path='/projects' render={() => <Projects />}/>
       </div>
     );
   }
