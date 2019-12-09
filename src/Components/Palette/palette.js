@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav';
 import Colors from '../Colors/Colors';
 import '../Palette/Palette.scss';
 import { Route } from 'react-router-dom';
+import {postPalette} from '../../apiCalls'
 
 export class Palette extends Component {
   constructor() {
@@ -80,12 +81,23 @@ export class Palette extends Component {
   }
   }
 
+  savePalette = () => {
+    console.log('in post', this.state.color1, this.state.name)
+    postPalette(this.state.color1.name, 
+      this.state.color2.hex, 
+      this.state.color3.hex, 
+      this.state.color4.hex, 
+      this.state.color5.hex, 
+      13, 
+      this.state.name)
+  }
+
 
   render() {
     return(
       <section className="palette-page">
          <h4 className="title">Palette Picker</h4>
-      <Nav generateColor = {this.generateColor} name={this.state.name} handleNameChange={this.handleNameChange}/>
+      <Nav generateColor = {this.generateColor} props={this.state} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>
       <Colors 
         copyHex={this.copyHex}
         lockColor={this.lockColor}
