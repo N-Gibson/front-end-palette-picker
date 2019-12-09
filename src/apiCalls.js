@@ -30,6 +30,29 @@ export const postProject = async (projectName) => {
   };
 };
 
+export const patchProject = async (id, projectName) => {
+  const url = `https://pp-be.herokuapp.com/api/v1/projects/${id}`;
+  const body = {
+    name: projectName
+  };
+  const options = {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  };
+
+  try {
+    const response = await fetch(url, options);
+    if(!response.ok) {
+      throw new Error(`Error updating project: ${id}'s name to ${projectName}`)
+    }
+    const patchedProject = await response.json();
+    return patchedProject
+  } catch (error) {
+    throw new Error(error)
+  };
+};
+
 export const deleteProject = async (id) => {
   const url = `https://pp-be.herokuapp.com/api/v1/projects/${id}`;
   const options = {
