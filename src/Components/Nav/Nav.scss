@@ -1,0 +1,40 @@
+
+.nav-page{
+  font-family: 'Solway', serif;
+  display: flex;
+  justify-content: space-around;
+  height: 16vh;
+  align-items: center;
+  background-color: #EEF0F2
+}
+
+.nav__div--gen {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  
+}
+
+.nav__button--show {
+  width: 13%;
+  height: 6vh;
+  border-radius: 3em;
+  font-size: 1.2em;
+  color: #373F51;
+&:hover {
+  background-color: #A9BCD0;
+  cursor: pointer;
+
+}
+}
+
+.nav__name {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav__button--generate {
+  height: 5vh;
+    border-radius: 2em;
+    font-size: 1.2em;
+}
