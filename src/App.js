@@ -15,8 +15,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {/* <Route exact path='/palette' render={() => 
-      <Palette key={Date.now()} />}/> */}
       <Route exact path='/' render={() => <Projects />}/>
       <Route exact path='/palettes/:id' render={() => <Palette />} />
 
