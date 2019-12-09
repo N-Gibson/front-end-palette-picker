@@ -16,7 +16,10 @@ class App extends Component {
     return (
       <div className="App">
       <Route exact path='/' render={() => <Projects />}/>
-      <Route exact path='/palettes/:id' render={() => <Palette />} />
+      <Route exact path='/palettes/:id' render={({ match }) => {
+        const { id } = match.params;
+        return <Palette id={id}/>
+      }} />
 
       </div>
     );

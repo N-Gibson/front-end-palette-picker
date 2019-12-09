@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getProjects, postProject } from '../../apiCalls';
+import { getProjects, postProject, postPalette } from '../../apiCalls';
 import Project from '../Project/project';
 import './projects.scss';
 
@@ -10,13 +10,14 @@ class Projects extends Component {
       projectName: '',
       revisedName: '',
       projects: [],
+      error: '',
     }
   }
 
   async componentDidMount() {
     try {
       const projects = await getProjects();
-      this.setState({ projects: projects })
+      this.setState({ projects: projects });
     } catch (error) {
       this.setState({ error: error })
     }
