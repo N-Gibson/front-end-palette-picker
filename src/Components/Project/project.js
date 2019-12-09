@@ -1,13 +1,17 @@
 import React from 'react';
-import { deleteProject } from '../apiCalls';
+import { deleteProject } from '../../apiCalls';
 import { Link } from 'react-router-dom';
 import './project.scss';
 
 const Project = (props) => {
+  console.log(props)
+  const { changeName } = props;
   return (
-    // <Link to={`/project/${props.id}`}>
     <section className='project' id={`project_${props.id}`}>
-      <textarea>{props.name}</textarea>
+      <textarea name='projectName' onChange={() => changeName()}>{props.name}</textarea>
+      <Link to={`/palettes/${props.id}`}>
+        <button>Show</button>
+      </Link>
       <button 
         type='button' 
         onClick={() => {
@@ -15,7 +19,6 @@ const Project = (props) => {
         }
       }>Delete</button>
     </section>
-    // </Link>
   )
 }
 

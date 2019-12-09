@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getProjects, postProject } from '../apiCalls';
+import { getProjects, postProject } from '../../apiCalls';
 import Project from '../Project/project';
 import './projects.scss';
 
@@ -33,6 +33,7 @@ class Projects extends Component {
   }
 
   render() {
+    console.log(this.state.projectName)
   const projects = this.state.projects.map(project => <Project key={project.id} id={project.id} name={project.name} changeName={() => this.handleChange()}/>);
     return(
       <main>
