@@ -24,7 +24,7 @@ export class Palette extends Component {
   async componentDidMount() {
     try {
       const palettes = await getPalettes();
-      const thesePalettes = palettes.filter(palette => palette.project_id === this.props.id);
+      const thesePalettes = palettes.filter(palette => palette.project_id === parseInt(this.props.id));
       this.setState({ palettes: thesePalettes })
     } catch (error) {
       this.setState({ error: error })
@@ -104,6 +104,7 @@ export class Palette extends Component {
 
 
   render() {
+    console.log(this.state.palettes)
     return(
       <section className="palette-page">
          <h4 className="title">Palette Picker</h4>
