@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form';
-import '../Nav/Nav.scss'
+import '../Nav/Nav.scss';
+
 
 
 export const Nav = (props) => {
+  const {name, handleNameChange} = props
   return(
     <section className="nav-page">
     <button className="nav__button--show">Show Palettes</button>
@@ -11,7 +13,7 @@ export const Nav = (props) => {
     <h1 className="nav__name">Project Name</h1>
     <button onClick={props.generateColor} className="nav__button--generate">Generate</button>
     </div>
-    <Form />
+    <Form name={name} handleNameChange={handleNameChange}/>
     </section>
   )
 }

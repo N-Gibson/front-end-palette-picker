@@ -18,6 +18,11 @@ export class Palette extends Component {
     }
   }
 
+  handleNameChange = (e) => {
+    console.log('running')
+    this.setState({ name: e.target.value })
+  }
+
   generateRandomColor = () => {
     return '#'+(Math.random()*0xFFFFFF<<0).toString(16)
   }
@@ -31,7 +36,6 @@ export class Palette extends Component {
       }
     }))
   }
-
     this.setState(prevState => ({
       color2: {                   
           ...prevState.color2,    
@@ -81,8 +85,7 @@ export class Palette extends Component {
     return(
       <section className="palette-page">
          <h4 className="title">Palette Picker</h4>
-      <Nav generateColor = {this.generateColor}/>
-     
+      <Nav generateColor = {this.generateColor} name={this.state.name} handleNameChange={this.handleNameChange}/>
       <Colors 
         copyHex={this.copyHex}
         lockColor={this.lockColor}
