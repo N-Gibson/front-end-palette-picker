@@ -20,7 +20,6 @@ export class Palette extends Component {
   }
 
   handleNameChange = (e) => {
-    console.log('running')
     this.setState({ name: e.target.value })
   }
 
@@ -82,7 +81,6 @@ export class Palette extends Component {
   }
 
   savePalette = () => {
-    console.log('in post', this.state.color1, this.state.name)
     postPalette(this.state.color1.name, 
       this.state.color2.hex, 
       this.state.color3.hex, 
