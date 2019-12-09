@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Form/Form.scss';
 
 export class Form extends Component {
   constructor() {
@@ -9,8 +10,10 @@ export class Form extends Component {
   render() {
     return(
       <section className="form-page">
-      <input placeholder="Name Palette"/>
-    <button>Save Palette</button>
+      <div className="form__div--save">
+      <input className="form__input--name" placeholder="Name Palette"/>
+    <button className="form__button--save">Save Palette</button>
+    </div>
       </section>    
       )
   }

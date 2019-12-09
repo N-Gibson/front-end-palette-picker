@@ -1,1 +1,15 @@
 
+.form__div--save {
+  display: flex;
+  flex-direction: column;
+  width: 13em;
+  height: 16vh;
+  justify-content: space-around;
+
+}
+
+.form__button--save,
+.form__input--name {
+  height: 6vh;
+  border-radius: 3em;
+}

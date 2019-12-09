@@ -26,7 +26,7 @@ class App extends Component {
     console.log(this.state.projects)
     return (
       <div className="App">
-        {/* <Project /> */}
+        <Project />
         {/* <Route exact path='/palette' render={() => 
           <Palette key={Date.now()} />}/> */}
           <Palette />

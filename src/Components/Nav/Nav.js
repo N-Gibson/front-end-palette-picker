@@ -8,8 +8,8 @@ export const Nav = (props) => {
     <section className="nav-page">
     <button className="nav__button--show">Show Palettes</button>
     <div className="nav__div--gen">
-    <h1>Project Name</h1>
-    <button onClick={props.generateColor}>Generate</button>
+    <h1 className="nav__name">Project Name</h1>
+    <button onClick={props.generateColor} className="nav__button--generate">Generate</button>
     </div>
     <Form />
     </section>
