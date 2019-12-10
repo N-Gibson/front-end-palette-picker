@@ -4,18 +4,30 @@ import Nav from '../Nav/Nav';
 import Colors from '../Colors/Colors';
 import '../Palette/Palette.scss';
 import { Route } from 'react-router-dom';
-import {postPalette} from '../../apiCalls'
+import { postPalette, getPalettes } from '../../apiCalls'
 
 export class Palette extends Component {
   constructor() {
     super()
     this.state = {
       name: '',
+      palettes: [],
       color1: {hex: '#818479', isLocked: false},
       color2: {hex: '#B5CBB7', isLocked: false},
       color3: {hex: '#D2E4C4', isLocked: false},
       color4: {hex: '#E4E9B2', isLocked: false},
-      color5: {hex: '#E7E08B', isLocked: false}
+      color5: {hex: '#E7E08B', isLocked: false},
+      error: '',
+    }
+  }
+
+  async componentDidMount() {
+    try {
+      const palettes = await getPalettes();
+      const thesePalettes = palettes.filter(palette => palette.project_id === parseInt(this.props.id));
+      this.setState({ palettes: thesePalettes })
+    } catch (error) {
+      this.setState({ error: error })
     }
   }
 
@@ -92,6 +104,7 @@ export class Palette extends Component {
 
 
   render() {
+    console.log(this.state.palettes)
     return(
       <section className="palette-page">
          <h4 className="title">Palette Picker</h4>

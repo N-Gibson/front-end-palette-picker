@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Projects from './Projects/projects';
+import Projects from './Components/Projects/projects';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Palette from './Components/Palette/palette'
@@ -15,10 +15,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {/* <Route exact path='/palette' render={() => 
-      <Palette key={Date.now()} />}/> */}
-      <Palette />
-      <Route exact path='/projects' render={() => <Projects />}/>
+      <Route exact path='/' render={() => <Projects />}/>
+      <Route exact path='/palettes/:id' render={({ match }) => {
+        const { id } = match.params;
+        return <Palette id={id}/>
+      }} />
+
       </div>
     );
   }

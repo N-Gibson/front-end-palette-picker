@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getProjects, postProject } from '../apiCalls';
+import { getProjects, postProject, postPalette } from '../../apiCalls';
 import Project from '../Project/project';
 import './projects.scss';
 
@@ -8,20 +8,22 @@ class Projects extends Component {
     super(props);
     this.state = {
       projectName: '',
+      revisedName: '',
       projects: [],
+      error: '',
     }
   }
 
   async componentDidMount() {
     try {
       const projects = await getProjects();
-      this.setState({ projects: projects })
+      this.setState({ projects: projects });
     } catch (error) {
       this.setState({ error: error })
     }
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
@@ -33,7 +35,7 @@ class Projects extends Component {
   }
 
   render() {
-  const projects = this.state.projects.map(project => <Project key={project.id} id={project.id} name={project.name} changeName={() => this.handleChange()}/>);
+  const projects = this.state.projects.map(project => <Project key={project.id} id={project.id} name={project.name} changeName={(e) => this.handleChange(e)}/>);
     return(
       <main>
         <h1>Palette Picker</h1>
