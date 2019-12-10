@@ -18,6 +18,7 @@ export const getPalette = async (id) => {
 }
 
 export const postPalette = async (color1, color2, color3, color4, color5, projectId, paletteName) => {
+  console.log(color1, color2, color3, color4, color5, projectId, paletteName)
   const url = 'https://pp-be.herokuapp.com/api/v1/palettes/'
   const body = {
     name: paletteName,

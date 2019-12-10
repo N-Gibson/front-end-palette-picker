@@ -29,7 +29,7 @@ export class Palette extends Component {
       const palettes = await getPalettes();
       const thesePalettes = palettes.filter(palette => palette.project_id === parseInt(this.props.id));
       this.setState({ palettes: thesePalettes })
-      const id = thesePalettes[0].project_id
+      const id = parseInt(thesePalettes[0].project_id)
       this.setState({ currentProjectId: id })
     } catch (error) {
       this.setState({ error: error })
@@ -98,12 +98,12 @@ export class Palette extends Component {
   }
 
   savePalette = () => {
-    postPalette(this.state.color1.name, 
+    postPalette(this.state.color1.hex, 
       this.state.color2.hex, 
       this.state.color3.hex, 
       this.state.color4.hex, 
       this.state.color5.hex, 
-      13, 
+      this.state.currentProjectId, 
       this.state.name)
   }
 
