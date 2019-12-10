@@ -9,7 +9,6 @@ export class Form extends Component {
   }
 
   render() {
-    console.log('props', this.props)
    const {handleNameChange, savePalette} = this.props
     return(
       <section className="form-page">

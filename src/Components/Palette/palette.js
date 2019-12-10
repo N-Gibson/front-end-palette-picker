@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form';
-import Nav from '../Nav/Nav';
+// import Nav from '../Nav/Nav';
 import Colors from '../Colors/Colors';
 import '../Palette/Palette.scss';
 import { Route } from 'react-router-dom';
-import { postPalette, getPalettes } from '../../apiCalls'
+import { postPalette, getPalettes } from '../../apiCalls';
+import {Link} from 'react-router-dom'
 
 export class Palette extends Component {
   constructor() {
@@ -12,6 +13,7 @@ export class Palette extends Component {
     this.state = {
       name: '',
       palettes: [],
+      currentProjectId: 0,
       color1: {hex: '#818479', isLocked: false},
       color2: {hex: '#B5CBB7', isLocked: false},
       color3: {hex: '#D2E4C4', isLocked: false},
@@ -26,6 +28,8 @@ export class Palette extends Component {
       const palettes = await getPalettes();
       const thesePalettes = palettes.filter(palette => palette.project_id === parseInt(this.props.id));
       this.setState({ palettes: thesePalettes })
+      const id = thesePalettes[0].project_id
+      this.setState({ currentProjectId: id })
     } catch (error) {
       this.setState({ error: error })
     }
@@ -104,11 +108,25 @@ export class Palette extends Component {
 
 
   render() {
-    console.log(this.state.palettes)
+    const {handleInfo} = this.props
     return(
       <section className="palette-page">
+      <Link to={`/palettes/${this.state.currentProjectId}`} > 
+        <button onClick={() => handleInfo(this.state.palettes)} className="nav__button--show">Show Palettes</button>
+      </Link>
+      <div className="nav__div--gen">
+        <h1 className="nav__name">Project Name</h1>
+        <button onClick={this.generateColor} className="nav__button--generate">Generate</button>
+      </div>
+      <Form props={this.props} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>
          <h4 className="title">Palette Picker</h4>
-      <Nav generateColor = {this.generateColor} props={this.state} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>
+      {/* <Nav  */}
+        {/* palettes={this.state.palettes}
+        handleInfo={handleInfo} 
+        generateColor = {this.generateColor} 
+        props={this.state} 
+        handleNameChange={this.handleNameChange} 
+        savePalette={this.savePalette}/> */}
       <Colors 
         copyHex={this.copyHex}
         lockColor={this.lockColor}
