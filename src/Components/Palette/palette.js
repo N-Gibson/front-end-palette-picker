@@ -5,7 +5,8 @@ import Colors from '../Colors/Colors';
 import '../Palette/Palette.scss';
 import { Route } from 'react-router-dom';
 import { postPalette, getPalettes } from '../../apiCalls';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import '../Nav/Nav.scss'
 
 export class Palette extends Component {
   constructor() {
@@ -111,6 +112,7 @@ export class Palette extends Component {
     const {handleInfo} = this.props
     return(
       <section className="palette-page">
+      <section className="nav-page">
       <Link to={`/palettes/${this.state.currentProjectId}`} > 
         <button onClick={() => handleInfo(this.state.palettes)} className="nav__button--show">Show Palettes</button>
       </Link>
@@ -120,6 +122,7 @@ export class Palette extends Component {
       </div>
       <Form props={this.props} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>
          <h4 className="title">Palette Picker</h4>
+         </section>
       {/* <Nav  */}
         {/* palettes={this.state.palettes}
         handleInfo={handleInfo} 
