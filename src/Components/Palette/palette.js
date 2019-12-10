@@ -25,11 +25,15 @@ export class Palette extends Component {
   }
 
   async componentDidMount() {
+    await this.getAllPalettes()
+  }
+
+  getAllPalettes = async () => {
     try {
       const palettes = await getPalettes();
       const thesePalettes = palettes.filter(palette => palette.project_id === parseInt(this.props.id));
       this.setState({ palettes: thesePalettes })
-      const id = parseInt(thesePalettes[0].project_id)
+      const id = parseInt(this.props.id)
       this.setState({ currentProjectId: id })
     } catch (error) {
       this.setState({ error: error })
@@ -105,6 +109,7 @@ export class Palette extends Component {
       this.state.color5.hex, 
       this.state.currentProjectId, 
       this.state.name)
+    this.setState({ name: ''})
   }
 
 
@@ -114,7 +119,7 @@ export class Palette extends Component {
       <section className="palette-page">
       <section className="nav-page">
       <Link to={`/palettes/${this.state.currentProjectId}`} > 
-        <button onClick={() => handleInfo(this.state.palettes)} className="nav__button--show">Show Palettes</button>
+        <button onClick={() => handleInfo(this.state.palettes)} onMouseEnter={this.getAllPalettes} className="nav__button--show">Show Palettes</button>
       </Link>
       <div className="nav__div--gen">
         <h1 className="nav__name">Project Name</h1>
@@ -123,13 +128,6 @@ export class Palette extends Component {
       <Form props={this.props} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>
          <h4 className="title">Palette Picker</h4>
          </section>
-      {/* <Nav  */}
-        {/* palettes={this.state.palettes}
-        handleInfo={handleInfo} 
-        generateColor = {this.generateColor} 
-        props={this.state} 
-        handleNameChange={this.handleNameChange} 
-        savePalette={this.savePalette}/> */}
       <Colors 
         copyHex={this.copyHex}
         lockColor={this.lockColor}

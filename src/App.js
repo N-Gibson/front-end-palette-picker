@@ -10,10 +10,16 @@ class App extends Component {
     super()
     this.state = {
       error: '',
-      paletteInfo: []
+      paletteInfo: [],
+      isLoading: true,
     }
   }
 
+  componentDidMount = () => {
+    this.setState({isLoading: false})
+  }
+
+  
   handleInfo = (palettes) => {
     this.setState({ paletteInfo: palettes })
   }
@@ -26,8 +32,8 @@ class App extends Component {
         const { id } = match.params;
         return <Palette handleInfo={this.handleInfo} id={id}/>
       }} />
-      <Route exact path='/palettes/:id' render={() => { 
-        return <AllPalettes palettes={this.state.paletteInfo} />
+      <Route exact path='/palettes/:id' render={() => {
+        return <AllPalettes palettes={this.state.paletteInfo}/>
       }}/>
       </div>
     );
