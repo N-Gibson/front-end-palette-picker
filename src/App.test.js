@@ -26,19 +26,20 @@ describe('Get Palettes', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: Promise.resolve(mockResponse),
+        json: () => Promise.resolve(mockResponse),
       })
     })
   });
 
   it('should return all of the palettes if the response is ok' ,() => {
-    expect(getPalettes()).resolves().toEqual(mockResponse);
+    const result = getPalettes();
+    expect(result).resolves().toEqual(mockResponse);
   });
 
   it('should throw and error if the response is not ok', () => {
     window.fetch = jest.fn().mockImplementation(() => {
-      ok: false
-    })
+      return Promise.resolve({ ok: false });
+    });
 
     expect(getPalettes()).rejects().toEqual('There was an error loading the palette')
   });
@@ -59,7 +60,7 @@ describe('Get palette', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: Promise.resolve(mockResponse),
+        json: () => Promise.resolve(mockResponse),
       })
     })
   });
@@ -71,8 +72,8 @@ describe('Get palette', () => {
 
   it('should throw an error if the response is not ok', () => {
     window.fetch = jest.fn().mockImplementation(() => {
-      ok: false
-    })
+      return Promise.resolve({ ok: false });
+    });
 
     expect(getPalette()).rejects().toEqual('There was an error loading the palette')
   });
@@ -104,7 +105,7 @@ describe('Post palette', () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
-        json: Promise.resolve(palettes)
+        json: () => Promise.resolve(palettes)
       })
     })
   });
