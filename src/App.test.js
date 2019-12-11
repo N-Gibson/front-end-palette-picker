@@ -1,4 +1,4 @@
-import { getPalettes, getPalette } from './apiCalls';
+import { getPalettes, getPalette, postPalette } from './apiCalls';
 
 describe('Get Palettes', () => {
   const mockResponse = [
@@ -144,5 +144,4 @@ describe('Post palette', () => {
 
     expect(postPalette(newPalette.name, newPalette.project_id, newPalette.color1, newPalette.color2, newPalette.color3, newPalette.color4, newPalette.color5)).resolves.toEqual({id: 4})
   });
-
 });
