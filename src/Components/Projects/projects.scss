@@ -12,11 +12,12 @@ main {
 h1 {
   display: flex;
   flex-direction: flex-start;
+  font-family: 'Dancing Script';
   grid-area: nav;
   margin-left: 20px;
 }
 
-.project-inputs {
+.project-inputs { 
   display: flex;
   flex-direction: column;
   grid-area: inputs;
@@ -26,6 +27,7 @@ h1 {
 }
 
 .project-input {
+  border-radius: 20px;
   font-size: 1em;
   height: 50px;
   margin-bottom: 5px;
@@ -33,6 +35,7 @@ h1 {
 }
 
 .project-button {
+  border-radius: 20px;
   cursor: pointer;
   font-size: 1.2em;
   height: 50px;
@@ -40,6 +43,10 @@ h1 {
     &:hover {
       background-color: lightgrey;
     }
+}
+
+.project__button-interactions {
+  border-radius: 20px;
 }
 
 .project-display {
@@ -60,6 +67,11 @@ h1 {
   color: #D9DCDF;
   left: 42%;
   position: absolute;
+}
+
+.project-name {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
 }
 
 .project {
