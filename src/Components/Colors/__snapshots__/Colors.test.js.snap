@@ -1,3 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Colors should match the snapshot 1`] = `undefined`;
+exports[`Colors should match the snapshot 1`] = `
+<section
+  className="colors-page"
+>
+  <div
+    className="color div__color--1"
+    style={
+      Object {
+        "backgroundColor": "2",
+      }
+    }
+  >
+    <img
+      alt="lock icon"
+      onClick={[Function]}
+      src="locked-icon.png"
+    />
+    <h2
+      className="color__hex"
+    >
+      2
+    </h2>
+  </div>
+  <div
+    className="color div__color--2"
+    style={
+      Object {
+        "backgroundColor": "2",
+      }
+    }
+  >
+    <img
+      alt="lock icon"
+      src="locked-icon.png"
+    />
+    <h2
+      className="color__hex"
+    >
+      2
+    </h2>
+  </div>
+  <div
+    className="color div__color--3"
+    style={
+      Object {
+        "backgroundColor": "2",
+      }
+    }
+  >
+    <img
+      alt="lock icon"
+      src="locked-icon.png"
+    />
+    <h2
+      className="color__hex"
+    >
+      2
+    </h2>
+  </div>
+  <div
+    className="color div__color--4"
+    style={
+      Object {
+        "backgroundColor": "2",
+      }
+    }
+  >
+    <img
+      alt="lock icon"
+      src="locked-icon.png"
+    />
+    <h2
+      className="color__hex"
+    >
+      2
+    </h2>
+  </div>
+  <div
+    className="color div__color5"
+    style={
+      Object {
+        "backgroundColor": "2",
+      }
+    }
+  >
+    <img
+      alt="lock icon"
+      src="locked-icon.png"
+    />
+    <h2
+      className="color__hex"
+    >
+      2
+    </h2>
+  </div>
+</section>
+`;
