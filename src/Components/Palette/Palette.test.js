@@ -24,4 +24,15 @@ describe('Palette', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   })
+
+  it('should update name state when handleNameChange is called', () => {
+    let mockEventTarget = {
+      target: {value: 'new name!'}
+    }
+
+    wrapper.instance().handleNameChange(mockEventTarget)
+
+    expect(wrapper.state('name')).toEqual('new name!')
+  })
+
 })
