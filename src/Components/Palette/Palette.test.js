@@ -50,4 +50,12 @@ describe('Palette', () => {
     expect(mockGenerateRandomColor).toHaveBeenCalled()
   })
 
+  it('should update state when lockColor is called', () => {
+    expect(wrapper.state('color1')).toEqual({hex: '#818479', isLocked: false })
+
+    wrapper.instance().lockColor()
+
+    expect(wrapper.state('color1')).toEqual({ hex: '#818479', isLocked: true })
+  })
+
 })
