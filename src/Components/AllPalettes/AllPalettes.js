@@ -7,24 +7,26 @@ const AllPalettes = (props) => {
   const {removePalette} = props
   const palettes = props.palettes.map(palette => {
     return(
-      <div data-id={palette.id}>
-        <h3>{palette.name}</h3>
-        <div style={{backgroundColor: palette.color1}}>
-          {palette.color1}
+      <div className='outer-color-container' data-id={palette.id}>
+        <h3 className='all-palette-name'>{palette.name}</h3>
+        <div className='inner-color-container'>
+          <div  id='col-first'  className='all-palettes-colors' style={{backgroundColor: palette.color1}}>
+            {palette.color1}
+          </div>
+          <div className='all-palettes-colors' style={{backgroundColor: palette.color2}}>
+            {palette.color2}
+          </div>
+          <div className='all-palettes-colors' style={{backgroundColor: palette.color3}}>
+            {palette.color3}
+          </div>
+          <div className='all-palettes-colors' style={{backgroundColor: palette.color4}}>
+            {palette.color4}
+          </div>
+          <div id='col-last' className='all-palettes-colors' style={{backgroundColor: palette.color5}}>
+            {palette.color5}
+          </div>
         </div>
-        <div style={{backgroundColor: palette.color2}}>
-          {palette.color2}
-        </div>
-        <div style={{backgroundColor: palette.color3}}>
-          {palette.color3}
-        </div>
-        <div style={{backgroundColor: palette.color4}}>
-          {palette.color4}
-        </div>
-        <div style={{backgroundColor: palette.color5}}>
-          {palette.color5}
-        </div>
-          <button onClick={() => removePalette(palette.id)}>Delete</button>
+          <button className='delete-palette' onClick={() => removePalette(palette.id)}>Delete</button>
       </div>
     )
   })
