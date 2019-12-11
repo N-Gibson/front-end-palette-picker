@@ -6,7 +6,6 @@ const AllPalettes = (props) => {
   const {removePalette} = props
   const palettes = props.palettes.map(palette => {
     return(
-<<<<<<< HEAD
       <div className='outer-color-container' data-id={palette.id}>
         <h3 className='all-palette-name'>{palette.name}</h3>
         <div className='inner-color-container'>
@@ -25,12 +24,6 @@ const AllPalettes = (props) => {
           <div id='col-last' className='all-palettes-colors' style={{backgroundColor: palette.color5}}>
             {palette.color5}
           </div>
-=======
-      <div key={palette.id} data-id={palette.id}>
-        <h3>{palette.name}</h3>
-        <div style={{backgroundColor: palette.color1}}>
-          {palette.color1}
->>>>>>> master
         </div>
           <button className='delete-palette' onClick={() => removePalette(palette.id)}>Delete</button>
       </div>
