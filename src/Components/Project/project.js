@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 import './project.scss';
 
 const Project = (props) => {
-  const { handleProject } = props;
+  const { handleProject, deleteProjectAndPalettes } = props;
   return (
     <section className='project' id={`project_${props.id}`}>
-      <h3 name='revisedName'>{props.name}</h3>
+      <h3 className='project-name' name='revisedName'>{props.name}</h3>
       <Link to={`/project/${props.id}` }>
-        <button className="project__button" onClick={() => handleProject(props.name)}>Show</button>
+        <button className="project__button-interactions" onClick={() => handleProject(props.name)}>Show</button>
       </Link>
       <button 
-        className="project__button"
+        className="project__button-interactions"
         type='button' 
         onClick={() => {
-          deleteProject(props.id);
+          deleteProjectAndPalettes(props.id);
         }
       }>Delete</button>
     </section>
