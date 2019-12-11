@@ -33,8 +33,10 @@ class Projects extends Component {
 
   handleClick = async () => {
     if(this.state.projectName) {
-      postProject(this.state.projectName);
+      await postProject(this.state.projectName);
       this.setState({ projectName: ''});
+      const projects = await getProjects();
+      this.setState({ projects: projects })
     }
   }
 
