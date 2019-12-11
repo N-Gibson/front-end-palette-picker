@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App'
+import '../src/apiCalls'
+
+jest.mock('../src/apiCalls')
 
 describe('App', () => {
   let wrapper;
@@ -39,5 +42,12 @@ describe('App', () => {
     wrapper.instance().handleProject('a new project')
 
     expect(wrapper.state('currentProject')).toEqual('a new project')
+  })
+
+  it('should call delete palette when removePalette is called', () => {
+    let deletePalette = jest.fn()
+    wrapper.instance().removePalette(deletePalette())
+
+    expect(deletePalette).toHaveBeenCalled()
   })
 });
