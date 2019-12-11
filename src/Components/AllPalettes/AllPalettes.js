@@ -3,11 +3,10 @@ import './AllPalettes.scss';
 import {deletePalette} from '../../apiCalls'
 
 const AllPalettes = (props) => {
-  console.log('props in pallettes', props)
   const {removePalette} = props
   const palettes = props.palettes.map(palette => {
     return(
-      <div data-id={palette.id}>
+      <div key={palette.id} data-id={palette.id}>
         <h3>{palette.name}</h3>
         <div style={{backgroundColor: palette.color1}}>
           {palette.color1}
