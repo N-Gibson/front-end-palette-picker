@@ -10,7 +10,7 @@
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
     "react-router-dom": "^5.1.2",
-    "scss": "^0.2.4",
+    "scss": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
