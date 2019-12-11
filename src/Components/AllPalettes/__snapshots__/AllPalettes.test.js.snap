@@ -2,7 +2,10 @@
 
 exports[`All Palettes should match the snapshot 1`] = `
 <div>
-  <div>
+  <div
+    data-id={1}
+    key="1"
+  >
     <h3 />
     <div
       style={
