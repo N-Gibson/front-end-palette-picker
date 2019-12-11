@@ -8,7 +8,7 @@ const Project = (props) => {
   return (
     <section className='project' id={`project_${props.id}`}>
       <textarea name='revisedName' onChange={changeName}>{props.name}</textarea>
-      <Link to={`/palettes/${props.id}`}>
+      <Link to={`/project/${props.id}` }>
         <button>Show</button>
       </Link>
       <button 
