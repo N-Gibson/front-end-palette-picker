@@ -35,4 +35,19 @@ describe('Palette', () => {
     expect(wrapper.state('name')).toEqual('new name!')
   })
 
+  it('should call generateColor when generate button is clicked', () => {
+    let mockGenerateColor = jest.fn()
+
+    wrapper.find('.nav__button--generate').simulate('click'); mockGenerateColor();
+    expect(mockGenerateColor).toHaveBeenCalled()
+  })
+
+  it('should call generateRandomColor when generateColor is called', () => {
+    let mockGenerateRandomColor = jest.fn()
+    mockGenerateRandomColor()
+
+    wrapper.instance().generateColor()
+    expect(mockGenerateRandomColor).toHaveBeenCalled()
+  })
+
 })
