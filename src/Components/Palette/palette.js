@@ -114,7 +114,8 @@ export class Palette extends Component {
 
 
   render() {
-    const {handleInfo} = this.props
+    const {handleInfo, currentProject} = this.props
+    console.log('current proj...', currentProject)
     return(
       <section className="palette-page">
       <section className="nav-page">
@@ -122,7 +123,7 @@ export class Palette extends Component {
         <button onClick={() => handleInfo(this.state.palettes)} onMouseEnter={this.getAllPalettes} className="nav__button--show">Show Palettes</button>
       </Link>
       <div className="nav__div--gen">
-        <h1 className="nav__name">Project Name</h1>
+        <h1 className="nav__name">{currentProject}</h1>
         <button onClick={this.generateColor} className="nav__button--generate">Generate</button>
       </div>
       <Form props={this.props} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>

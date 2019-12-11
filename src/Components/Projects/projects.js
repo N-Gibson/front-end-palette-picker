@@ -35,7 +35,8 @@ class Projects extends Component {
   }
 
   render() {
-  const projects = this.state.projects.map(project => <Project key={project.id} id={project.id} name={project.name} changeName={(e) => this.handleChange(e)}/>);
+  const {handleProject} = this.props
+  const projects = this.state.projects.map(project => <Project key={project.id} id={project.id} name={project.name} handleProject={handleProject} changeName={(e) => this.handleChange(e)}/>);
     return(
       <main>
         <h1>Palette Picker</h1>

@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import './project.scss';
 
 const Project = (props) => {
-  const { changeName } = props;
+  const { changeName, handleProject } = props;
   return (
     <section className='project' id={`project_${props.id}`}>
       <textarea name='revisedName' onChange={changeName}>{props.name}</textarea>
       <Link to={`/project/${props.id}` }>
-        <button>Show</button>
+        <button onClick={() => handleProject(props.name)}>Show</button>
       </Link>
       <button 
         type='button' 
