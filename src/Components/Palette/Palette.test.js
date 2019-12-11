@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Palette from './Palette'
+import Palette from './Palette';
+import '../src/apiCalls'
+
+jest.mock('../../apiCalls')
 
 describe('Palette', () => {
   let wrapper;
@@ -50,12 +53,26 @@ describe('Palette', () => {
     expect(mockGenerateRandomColor).toHaveBeenCalled()
   })
 
-  it('should update state when lockColor is called', () => {
+  it('should update and toggle state when lockColor is called', () => {
     expect(wrapper.state('color1')).toEqual({hex: '#818479', isLocked: false })
-
     wrapper.instance().lockColor()
-
     expect(wrapper.state('color1')).toEqual({ hex: '#818479', isLocked: true })
+
+    expect(wrapper.state('color1')).toEqual({hex: '#818479', isLocked: true })
+    wrapper.instance().lockColor()
+    expect(wrapper.state('color1')).toEqual({ hex: '#818479', isLocked: false })
+  })
+
+  it('should call postPalette when savePalette is called', () => {
+    wrapper.instance().savePalette(postPalette())
+
+    expect(postPalette).toHaveBeenCalled()
+  })
+
+  it('should reset state of name after savePalette is called', () => {
+    wrapper.instance().savePalette()
+
+    expect(wrapper.state('name')).toEqual('')
   })
 
 })
