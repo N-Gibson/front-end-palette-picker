@@ -115,20 +115,19 @@ export class Palette extends Component {
 
   render() {
     const {handleInfo, currentProject} = this.props
-    console.log('current proj...', currentProject)
     return(
-      <section className="palette-page">
+        <section className="palette-page">
+         <h4 className="title">Palette Picker</h4>
       <section className="nav-page">
       <Link to={`/palettes/${this.state.currentProjectId}`} > 
         <button onClick={() => handleInfo(this.state.palettes)} onMouseEnter={this.getAllPalettes} className="nav__button--show">Show Palettes</button>
       </Link>
       <div className="nav__div--gen">
-        <h1 className="nav__name">{currentProject}</h1>
+        <h1 className="nav__name">{currentProject.toUpperCase()}</h1>
         <button onClick={this.generateColor} className="nav__button--generate">Generate</button>
       </div>
       <Form props={this.props} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>
-         <h4 className="title">Palette Picker</h4>
-         </section>
+     </section>
       <Colors 
         copyHex={this.copyHex}
         lockColor={this.lockColor}
