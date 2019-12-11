@@ -3,7 +3,8 @@ import Projects from './Components/Projects/projects';
 import { Route } from 'react-router-dom';
 import './App.css';
 import Palette from './Components/Palette/palette'
-import AllPalettes from './Components/AllPalettes/AllPalettes'
+import AllPalettes from './Components/AllPalettes/AllPalettes';
+import {deletePalette} from '../src/apiCalls'
 
 class App extends Component {
   constructor() {
@@ -11,17 +12,15 @@ class App extends Component {
     this.state = {
       error: '',
       paletteInfo: [],
-      isLoading: true,
     }
   }
-
-  componentDidMount = () => {
-    this.setState({isLoading: false})
-  }
-
   
   handleInfo = (palettes) => {
     this.setState({ paletteInfo: palettes })
+  }
+
+  removePalette = (id) => {
+    deletePalette(id)
   }
 
   render() {
@@ -33,7 +32,7 @@ class App extends Component {
         return <Palette handleInfo={this.handleInfo} id={id}/>
       }} />
       <Route exact path='/palettes/:id' render={() => {
-        return <AllPalettes palettes={this.state.paletteInfo}/>
+        return <AllPalettes removePalette={this.removePalette} palettes={this.state.paletteInfo}/>
       }}/>
       </div>
     );

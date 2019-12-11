@@ -118,3 +118,20 @@ export const deleteProject = async (id) => {
   };
 };
 
+export const deletePalette = async (id) => {
+  const url = `https://pp-be.herokuapp.com/api/v1/palettes/${id}`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+  };
+  try {
+    const response = await fetch(url, options);
+    if(!response.ok) {
+      throw new Error(`Error deleting palette with id: ${id}`);
+    }
+    const deletedPalette = await response.json();
+    return deletedPalette
+  } catch (error) {
+    throw new Error(error)
+  };
+};
