@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Palette should match the snapshot 1`] = `
+<section
+  className="palette-page"
+>
+  <h4
+    className="title"
+  >
+    Palette Picker
+  </h4>
+  <section
+    className="nav-page"
+  >
+    <Link
+      to="/palettes/0"
+    >
+      <button
+        className="nav__button--show"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Show Palettes
+      </button>
+    </Link>
+    <div
+      className="nav__div--gen"
+    >
+      <h1
+        className="nav__name"
+      >
+        CURRENT
+      </h1>
+      <button
+        className="nav__button--generate"
+        onClick={[Function]}
+      >
+        Generate
+      </button>
+    </div>
+    <Form
+      handleNameChange={[Function]}
+      props={
+        Object {
+          "currentProject": "current",
+        }
+      }
+      savePalette={[Function]}
+    />
+  </section>
+  <Colors
+    color1={
+      Object {
+        "hex": "#818479",
+        "isLocked": false,
+      }
+    }
+    color2={
+      Object {
+        "hex": "#B5CBB7",
+        "isLocked": false,
+      }
+    }
+    color3={
+      Object {
+        "hex": "#D2E4C4",
+        "isLocked": false,
+      }
+    }
+    color4={
+      Object {
+        "hex": "#E4E9B2",
+        "isLocked": false,
+      }
+    }
+    color5={
+      Object {
+        "hex": "#E7E08B",
+        "isLocked": false,
+      }
+    }
+    lockColor={[Function]}
+  />
+</section>
+`;
