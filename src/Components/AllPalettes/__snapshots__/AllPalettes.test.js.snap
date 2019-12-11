@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All Palettes should match the snapshot 1`] = `
+<div>
+  <div>
+    <h3 />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <button
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>
+  <div>
+    <h3 />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": undefined,
+        }
+      }
+    />
+    <button
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/project/:id"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/palettes/:id"
+    render={[Function]}
+  />
+</div>
+`;
