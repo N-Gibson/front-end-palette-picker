@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { getProjects, postProject, postPalette } from '../../apiCalls';
+import { getProjects, postProject, postPalette, deleteProject, deletePalette, getPalettes } from '../../apiCalls';
 import Project from '../Project/project';
 import './projects.scss';
+
 
 class Projects extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Projects extends Component {
       revisedName: '',
       projects: [],
       error: '',
+      palettes: []
     }
   }
 
@@ -18,6 +20,8 @@ class Projects extends Component {
     try {
       const projects = await getProjects();
       this.setState({ projects: projects });
+      const palettes = await getPalettes()
+      this.setState({ palettes: palettes})
     } catch (error) {
       this.setState({ error: error })
     }
@@ -34,8 +38,26 @@ class Projects extends Component {
     }
   }
 
+  deleteProjectAndPalettes = async (projectId) => {
+    await this.state.palettes.forEach(palette => {
+      if (palette.projectId === projectId){
+        this.removePalette(palette.id)
+      }
+    })
+    await deleteProject(projectId)
+    getProjects();
+    getPalettes();
+  }
+
+  removePalette = async (id) => {
+    console.log('in it')
+    await deletePalette(parseInt(id))
+    getPalettes();
+  }
+
   render() {
-  const projects = this.state.projects.map(project => <Project key={project.id} id={project.id} name={project.name} changeName={(e) => this.handleChange(e)}/>);
+  const {handleProject} = this.props
+  const projects = this.state.projects.map(project => <Project deleteProjectAndPalettes={this.deleteProjectAndPalettes} key={project.id} id={project.id} name={project.name} handleProject={handleProject} changeName={(e) => this.handleChange(e)}/>);
     return(
       <main>
         <h1>Palette Picker</h1>

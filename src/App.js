@@ -12,11 +12,16 @@ class App extends Component {
     this.state = {
       error: '',
       paletteInfo: [],
+      currentProject: ''
     }
   }
   
   handleInfo = (palettes) => {
     this.setState({ paletteInfo: palettes  })
+  }
+
+  handleProject = (project) => {
+    this.setState({ currentProject: project})
   }
 
   removePalette = (id) => {
@@ -26,13 +31,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Route exact path='/' render={() => <Projects />}/>
+      <Route exact path='/' render={() => <Projects handleProject={this.handleProject} />}/>
       <Route exact path='/project/:id' render={({ match }) => {
         const { id } = match.params;
-        return <Palette handleInfo={this.handleInfo} id={id}/>
+        return <Palette currentProject={this.state.currentProject}   handleInfo={this.handleInfo} id={id}/>
       }} />
       <Route exact path='/palettes/:id' render={() => {
-        return <AllPalettes removePalette={this.removePalette} palettes={this.state.paletteInfo}/>
+        return <AllPalettes currentProject={this.state.currentProject} removePalette={this.removePalette} palettes={this.state.paletteInfo}/>
       }}/>
       </div>
     );

@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 import './project.scss';
 
 const Project = (props) => {
-  const { changeName } = props;
+  const { handleProject } = props;
   return (
     <section className='project' id={`project_${props.id}`}>
-      <textarea name='revisedName' onChange={changeName}>{props.name}</textarea>
+      <h3 name='revisedName'>{props.name}</h3>
       <Link to={`/project/${props.id}` }>
-        <button>Show</button>
+        <button className="project__button" onClick={() => handleProject(props.name)}>Show</button>
       </Link>
       <button 
+        className="project__button"
         type='button' 
         onClick={() => {
           deleteProject(props.id);
