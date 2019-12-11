@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Palette from './Palette';
-import '../src/apiCalls'
+import '../../apiCalls'
 
 jest.mock('../../apiCalls')
 
@@ -64,6 +64,7 @@ describe('Palette', () => {
   })
 
   it('should call postPalette when savePalette is called', () => {
+    let postPalette = jest.fn()
     wrapper.instance().savePalette(postPalette())
 
     expect(postPalette).toHaveBeenCalled()
@@ -73,6 +74,21 @@ describe('Palette', () => {
     wrapper.instance().savePalette()
 
     expect(wrapper.state('name')).toEqual('')
+  })
+
+  it.skip('should update state when getAllPalettes is called', () => {
+    let thesePalettes = [{
+      color1: {hex: '1', isLocked: true},
+      color2: {hex: '2', isLocked: false}
+    }]
+    wrapper.instance().getAllPalettes()
+    expect(wrapper.state('palettes')).toEqual([thesePalettes])
+
+    wrapper.instance().getAllPalettes()
+    expect(wrapper.state('currentProjectId')).toEqual(0)
+
+    wrapper.instance().getAllPalettes()
+    expect(wrapper.state('error')).toEqual('')
   })
 
 })
