@@ -21,7 +21,7 @@ describe('App', () => {
 
   it('should update the palette information', () => {
     expect(wrapper.state('paletteInfo')).toEqual([])
-    wrapper.instance.handleInfo([
+    wrapper.instance().handleInfo([
       {hex: '#fff', name: 'dog'},
       {hex: '#000', name: 'bob'},
       {hex: '#fff', name: 'fred'}
