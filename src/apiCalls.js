@@ -104,14 +104,16 @@ export const deleteProject = async (id) => {
   const url = `https://pp-be.herokuapp.com/api/v1/projects/${id}`;
   const options = {
     method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
-  };
+    headers: { 
+      'Content-Type': 'application/json',
+    },
+  }
   try {
     const response = await fetch(url, options);
     if(!response.ok) {
-      throw new Error(`Error deleting project with id: ${id}`);
+      throw new Error(`Error deleting project with id: ${id}`)
     }
-    const deletedProject = await response.json();
+    const deletedProject = await response.json()
     return deletedProject
   } catch (error) {
     throw new Error(error)
