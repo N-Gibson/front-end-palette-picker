@@ -12,7 +12,7 @@ export class Palette extends Component {
   constructor() {
     super()
     this.state = {
-      name: '',
+      name: '', 
       palettes: [],
       currentProjectId: 0,
       color1: {hex: '#818479', isLocked: false},

@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Palette from './Components/Palette/palette'
 import AllPalettes from './Components/AllPalettes/AllPalettes';
-import {deletePalette} from '../src/apiCalls'
+import {getPalettes, deletePalette} from '../src/apiCalls'
 
 class App extends Component {
   constructor() {
@@ -16,7 +16,7 @@ class App extends Component {
   }
   
   handleInfo = (palettes) => {
-    this.setState({ paletteInfo: palettes })
+    this.setState({ paletteInfo: palettes  })
   }
 
   removePalette = (id) => {
