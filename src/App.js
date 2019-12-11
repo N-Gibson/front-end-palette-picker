@@ -24,8 +24,11 @@ class App extends Component {
     this.setState({ currentProject: project})
   }
 
-  removePalette = (id) => {
-    deletePalette(id)
+  removePalette = async (id, project_id) => {
+    await deletePalette(id)
+    const palettes = await getPalettes();
+    const correctPalettes = palettes.filter(palette => palette.project_id === project_id);
+    this.setState({ paletteInfo: correctPalettes });
   }
 
   render() {

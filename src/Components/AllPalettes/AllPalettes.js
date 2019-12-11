@@ -25,7 +25,7 @@ const AllPalettes = (props) => {
             {palette.color5}
           </div>
         </div>
-          <button className='delete-palette' onClick={() => removePalette(palette.id)}>Delete</button>
+          <button className='delete-palette' onClick={() => removePalette(palette.id, palette.project_id)}>Delete</button>
       </div>
     )
   })
