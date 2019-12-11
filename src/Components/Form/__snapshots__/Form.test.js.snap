@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should match the snapshot 1`] = `
+<section
+  className="form-page"
+>
+  <div
+    className="form__div--save"
+  >
+    <input
+      className="form__input--name"
+      placeholder="Name Palette"
+    />
+    <button
+      className="form__button--save"
+    >
+      Save Palette
+    </button>
+  </div>
+</section>
+`;

@@ -50,7 +50,6 @@ class Projects extends Component {
   }
 
   removePalette = async (id) => {
-    console.log('in it')
     await deletePalette(parseInt(id))
     getPalettes();
   }
