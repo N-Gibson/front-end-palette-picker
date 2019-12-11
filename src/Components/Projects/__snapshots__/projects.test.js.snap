@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Projects should match the snapshot 1`] = `
+<main>
+  <h1>
+    Palette Picker
+  </h1>
+  <div
+    className="project-inputs"
+  >
+    <input
+      className="project-input"
+      name="projectName"
+      onChange={[Function]}
+      placeholder="New Project Name"
+      type="text"
+      value=""
+    />
+    <button
+      className="project-button"
+      onClick={[Function]}
+    >
+      Save
+    </button>
+  </div>
+  <div
+    className="project-display"
+  >
+    <p
+      className="project-prompt"
+    >
+      Select a project to view palettes
+    </p>
+  </div>
+</main>
+`;
