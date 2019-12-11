@@ -32,4 +32,12 @@ describe('App', () => {
       {hex: '#fff', name: 'fred'}
     ])
   });
+
+  it('should update state when handleProject is called', () => {
+    expect(wrapper.state('currentProject')).toEqual('')
+
+    wrapper.instance().handleProject('a new project')
+
+    expect(wrapper.state('currentProject')).toEqual('a new project')
+  })
 });

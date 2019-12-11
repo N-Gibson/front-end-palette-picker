@@ -27,5 +27,6 @@ describe('Projects', () => {
    }
     wrapper.instance().handleChange(mockEventTarget)
   })
+
   
 })

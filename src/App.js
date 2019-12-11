@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   handleProject = (project) => {
-    console.log('in it', project)
     this.setState({ currentProject: project})
   }
 
