@@ -32,7 +32,9 @@ class Projects extends Component {
   }
 
   handleClick = async () => {
-    if(this.state.projectName) {
+    const proj = await getProjects();
+    const duplicate = proj.find(project => project.name === this.state.projectName);
+    if(this.state.projectName && !duplicate) {
       await postProject(this.state.projectName);
       this.setState({ projectName: ''});
       const projects = await getProjects();

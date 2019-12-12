@@ -2,90 +2,129 @@
 
 exports[`All Palettes should match the snapshot 1`] = `
 <div>
-  <div
-    data-id={1}
-    key="1"
+  <Link
+    to="/"
   >
-    <h3 />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
-        }
-      }
+    <h1
+      className="title"
+    >
+      Palette Picker
+    </h1>
+  </Link>
+  <div
+    className="outer-color-container"
+    data-id={1}
+  >
+    <h3
+      className="all-palette-name"
     />
     <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      className="inner-color-container"
+    >
+      <div
+        className="all-palettes-colors"
+        id="col-first"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      />
+      <div
+        className="all-palettes-colors"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      />
+      <div
+        className="all-palettes-colors"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      />
+      <div
+        className="all-palettes-colors"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
+      />
+      <div
+        className="all-palettes-colors"
+        id="col-last"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      />
+    </div>
     <button
+      className="delete-palette"
       onClick={[Function]}
     >
       Delete
     </button>
   </div>
-  <div>
-    <h3 />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
-        }
-      }
+  <div
+    className="outer-color-container"
+  >
+    <h3
+      className="all-palette-name"
     />
     <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      className="inner-color-container"
+    >
+      <div
+        className="all-palettes-colors"
+        id="col-first"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      />
+      <div
+        className="all-palettes-colors"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      />
+      <div
+        className="all-palettes-colors"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
-    <div
-      style={
-        Object {
-          "backgroundColor": undefined,
+      />
+      <div
+        className="all-palettes-colors"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
         }
-      }
-    />
+      />
+      <div
+        className="all-palettes-colors"
+        id="col-last"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      />
+    </div>
     <button
+      className="delete-palette"
       onClick={[Function]}
     >
       Delete

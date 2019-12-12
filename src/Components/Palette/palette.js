@@ -14,11 +14,13 @@ export class Palette extends Component {
       name: '', 
       palettes: [],
       currentProjectId: 0,
-      color1: {hex: '#818479', isLocked: false},
-      color2: {hex: '#B5CBB7', isLocked: false},
-      color3: {hex: '#D2E4C4', isLocked: false},
-      color4: {hex: '#E4E9B2', isLocked: false},
-      color5: {hex: '#E7E08B', isLocked: false},
+      colors: [
+        {name: 'color1', hex: '#818479', isLocked: false},
+        {name: 'color2', hex: '#D2E4C4', isLocked: false},
+        {name: 'color3', hex: '#E4E9B2', isLocked: false},
+        {name: 'color4', hex: '#E7E08B', isLocked: false},
+        {name: 'color5', hex: '#B5CBB7', isLocked: false},
+      ],
       error: '',
     }
   }
@@ -48,64 +50,40 @@ export class Palette extends Component {
   }
 
   generateColor = () => {
-    if(!this.state.color1.isLocked) {
-      this.setState(prevState => ({
-      color1: {                   
-          ...prevState.color1,    
-          hex: this.generateRandomColor()
+    const newColors = [];
+    this.state.colors.forEach(color => {
+      if(!color.isLocked) {
+        let col = {...color};
+        col.hex = this.generateRandomColor();
+        newColors.push(col);
+      } else {
+        newColors.push(color);
       }
-    }))
-  }
-    this.setState(prevState => ({
-      color2: {                   
-          ...prevState.color2,    
-         hex: this.generateRandomColor()
-      }
-    }))
-    this.setState(prevState => ({
-      color3: {                   
-          ...prevState.color3,    
-          hex: this.generateRandomColor()
-      }
-   }))
-    this.setState(prevState => ({
-      color4: {                   
-          ...prevState.color4,    
-          hex: this.generateRandomColor()
-      }
-    }))
-    this.setState(prevState => ({
-      color5: {                   
-          ...prevState.color5,    
-          hex: this.generateRandomColor()
-      }
-    }))
+    });
+    this.setState({ colors: newColors });
   }
 
-  lockColor = () => {
-    if(!this.state.color1.isLocked) {
-    this.setState(prevState => ({
-      color1: {                   
-          ...prevState.color1,    
-          isLocked: true
+  lockColor = (colorNum) => {
+    const newColors = [];
+    this.state.colors.forEach(color => {
+      if(color.name === `color${colorNum}`) {
+        let col = {...color};
+        col.isLocked = !col.isLocked;
+        newColors.push(col);
+      } else {
+        newColors.push(color);
       }
-  }))
-  } else {
-    this.setState(prevState => ({
-      color1: {                   
-          ...prevState.color1,    
-          isLocked: false
-      }
-  }))
-  }
+    });
+  
+    this.setState({ colors: newColors })
   }
 
   savePalette = () => {
-    postPalette(this.state.color1.hex, 
-      this.state.color2.hex, 
-      this.state.color3.hex, 
-      this.state.color4.hex, 
-      this.state.color5.hex, 
+    postPalette(this.state.colors[0].hex, 
+      this.state.colors[1].hex, 
+      this.state.colors[2].hex, 
+      this.state.colors[3].hex, 
+      this.state.colors[4].hex, 
       this.state.currentProjectId, 
       this.state.name)
     this.setState({ name: ''})
@@ -132,11 +110,11 @@ export class Palette extends Component {
       <Colors 
         copyHex={this.copyHex}
         lockColor={this.lockColor}
-        color1={this.state.color1}
-        color2={this.state.color2}
-        color3={this.state.color3}
-        color4={this.state.color4}
-        color5={this.state.color5}/>
+        color1={this.state.colors[0]}
+        color2={this.state.colors[1]}
+        color3={this.state.colors[2]}
+        color4={this.state.colors[3]}
+        color5={this.state.colors[4]}/>
       </section>
     )
   }

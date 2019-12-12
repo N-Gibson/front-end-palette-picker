@@ -4,11 +4,15 @@ exports[`Palette should match the snapshot 1`] = `
 <section
   className="palette-page"
 >
-  <h4
-    className="title"
+  <Link
+    to="/"
   >
-    Palette Picker
-  </h4>
+    <h1
+      className="title"
+    >
+      Palette Picker
+    </h1>
+  </Link>
   <section
     className="nav-page"
   >
@@ -53,30 +57,35 @@ exports[`Palette should match the snapshot 1`] = `
       Object {
         "hex": "#818479",
         "isLocked": false,
+        "name": "color1",
       }
     }
     color2={
       Object {
-        "hex": "#B5CBB7",
+        "hex": "#D2E4C4",
         "isLocked": false,
+        "name": "color2",
       }
     }
     color3={
       Object {
-        "hex": "#D2E4C4",
+        "hex": "#E4E9B2",
         "isLocked": false,
+        "name": "color3",
       }
     }
     color4={
       Object {
-        "hex": "#E4E9B2",
+        "hex": "#E7E08B",
         "isLocked": false,
+        "name": "color4",
       }
     }
     color5={
       Object {
-        "hex": "#E7E08B",
+        "hex": "#B5CBB7",
         "isLocked": false,
+        "name": "color5",
       }
     }
     lockColor={[Function]}
