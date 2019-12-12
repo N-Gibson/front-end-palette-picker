@@ -10,7 +10,7 @@ The tech used to create this application includes:
   - Jest
   - Enzyme
   - React Router
-  - GitHub Projects [fe](https://github.com/N-Gibson/front-end-palette-picker/projects/1) [be](https://github.com/N-Gibson/back-end-palette-picker/projects/1)
+  - GitHub Projects [front end](https://github.com/N-Gibson/front-end-palette-picker/projects/1) & [back end](https://github.com/N-Gibson/back-end-palette-picker/projects/1)
   - Invision Studio
   
 ### Setup
