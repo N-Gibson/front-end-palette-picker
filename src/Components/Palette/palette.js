@@ -56,17 +56,26 @@ export class Palette extends Component {
         let col = {...color};
         col.hex = this.generateRandomColor();
         newColors.push(col);
+      } else {
+        newColors.push(color);
       }
     });
     this.setState({ colors: newColors });
   }
 
   lockColor = (colorNum) => {
-    const foundColor = this.state.colors.find(color => color.name === `color${colorNum}`);
-    const colorIndex = this.state.colors.indexOf(foundColor);
-    console.log(colorIndex)
-    // foundColor.isLocked = !foundColor.isLocked;
-    // this.setState({})
+    const newColors = [];
+    this.state.colors.forEach(color => {
+      if(color.name === `color${colorNum}`) {
+        let col = {...color};
+        col.isLocked = !col.isLocked;
+        newColors.push(col);
+      } else {
+        newColors.push(color);
+      }
+    });
+  
+    this.setState({ colors: newColors })
   }
 
   savePalette = () => {
