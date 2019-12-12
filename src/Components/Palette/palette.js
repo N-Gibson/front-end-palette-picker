@@ -16,10 +16,10 @@ export class Palette extends Component {
       currentProjectId: 0,
       colors: [
         {name: 'color1', hex: '#818479', isLocked: false},
-        {name: 'color3', hex: '#D2E4C4', isLocked: false},
-        {name: 'color4', hex: '#E4E9B2', isLocked: false},
-        {name: 'color5', hex: '#E7E08B', isLocked: false},
-        {name: 'color2', hex: '#B5CBB7', isLocked: false},
+        {name: 'color2', hex: '#D2E4C4', isLocked: false},
+        {name: 'color3', hex: '#E4E9B2', isLocked: false},
+        {name: 'color4', hex: '#E7E08B', isLocked: false},
+        {name: 'color5', hex: '#B5CBB7', isLocked: false},
       ],
       error: '',
     }
@@ -70,11 +70,11 @@ export class Palette extends Component {
   }
 
   savePalette = () => {
-    postPalette(this.state.color1.hex, 
-      this.state.color2.hex, 
-      this.state.color3.hex, 
-      this.state.color4.hex, 
-      this.state.color5.hex, 
+    postPalette(this.state.colors[0].hex, 
+      this.state.colors[1].hex, 
+      this.state.colors[2].hex, 
+      this.state.colors[3].hex, 
+      this.state.colors[4].hex, 
       this.state.currentProjectId, 
       this.state.name)
     this.setState({ name: ''})
