@@ -1,13 +1,12 @@
 import React from 'react';
 import './AllPalettes.scss';
-import {deletePalette} from '../../apiCalls';
 import {Link} from 'react-router-dom'
 
 const AllPalettes = (props) => {
   const {removePalette} = props
   const palettes = props.palettes.map(palette => {
     return(
-      <div className='outer-color-container' data-id={palette.id}>
+      <div className='outer-color-container' key={palette.id}>
         <h3 className='all-palette-name'>{palette.name}</h3>
         <div className='inner-color-container'>
           <div  id='col-first'  className='all-palettes-colors' style={{backgroundColor: palette.color1}}>

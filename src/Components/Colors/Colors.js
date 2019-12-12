@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../Colors/Colors.scss';
 import lockIcon from '../../images/locked-icon.png'
 

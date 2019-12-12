@@ -1,5 +1,4 @@
 import React from 'react';
-import { deleteProject } from '../../apiCalls';
 import { Link } from 'react-router-dom';
 import './project.scss';
 

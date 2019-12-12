@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getProjects, postProject, postPalette, deleteProject, deletePalette, getPalettes } from '../../apiCalls';
+import { getProjects, postProject, deleteProject, deletePalette, getPalettes } from '../../apiCalls';
 import Project from '../Project/project';
 import './projects.scss';
 
