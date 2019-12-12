@@ -1,6 +1,7 @@
 import React from 'react';
 import './AllPalettes.scss';
-import {deletePalette} from '../../apiCalls'
+import {deletePalette} from '../../apiCalls';
+import {Link} from 'react-router-dom'
 
 const AllPalettes = (props) => {
   const {removePalette} = props
@@ -31,6 +32,9 @@ const AllPalettes = (props) => {
   })
   return (
     <div>
+      <Link to="/">
+        <h1 className="title">Palette Picker</h1>
+      </Link>
       {palettes}
     </div>
   )
