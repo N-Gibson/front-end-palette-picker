@@ -11,7 +11,7 @@ The tech used to create this application includes:
   - Enzyme
   - React Router
   - GitHub Projects [front end](https://github.com/N-Gibson/front-end-palette-picker/projects/1) & [back end](https://github.com/N-Gibson/back-end-palette-picker/projects/1)
-  - Invision Studio
+  - [Invision Studio](https://projects.invisionapp.com/prototype/paletee-picker-ck3t70djb000z1w01v6x0qy8h/play/fa9c7c88)
   
 ### Setup
   
