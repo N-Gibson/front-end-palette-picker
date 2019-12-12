@@ -41,6 +41,12 @@
    }
 }
 
+button:hover {
+  color: #fff;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+     cursor: pointer;
+}
+
 #col-first {
   border-radius: 10px 0px 0px 10px; 
 }
