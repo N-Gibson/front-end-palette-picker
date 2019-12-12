@@ -6,20 +6,21 @@ exports[`Project should match the snapshot 1`] = `
   id="project_undefined"
 >
   <h3
+    className="project-name"
     name="revisedName"
   />
   <Link
     to="/project/undefined"
   >
     <button
-      className="project__button"
+      className="project__button-interactions"
       onClick={[Function]}
     >
       Show
     </button>
   </Link>
   <button
-    className="project__button"
+    className="project__button-interactions"
     onClick={[Function]}
     type="button"
   >
