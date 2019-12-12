@@ -35,3 +35,8 @@ The app can be located at http://localhost:3000
   
 ![screencapture-localhost-3000-2019-12-12-01_08_37](https://user-images.githubusercontent.com/49107377/70694099-0befaa80-1c7c-11ea-96bd-d6d60e90f1aa.png)
 
+![screencapture-localhost-3000-project-63-2019-12-12-01_10_52](https://user-images.githubusercontent.com/49107377/70694315-8caea680-1c7c-11ea-93e1-e6dd82c977c6.png)
+
+![screencapture-localhost-3000-palettes-63-2019-12-12-01_12_27](https://user-images.githubusercontent.com/49107377/70694318-8fa99700-1c7c-11ea-88cb-0df694b6287e.png)
+
+
