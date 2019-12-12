@@ -7,11 +7,12 @@
 }
 
 .outer-color-container {
+  background-color: #fff;
   border: 1px solid lightgrey;
   margin: 20px;
   padding: 10px;
    &:hover {
-    box-shadow: 0 4px 8px 0 lightgrey, 0 6px 20px 1px lightgrey;
+    box-shadow: 0 4px 8px 0 lightgrey, 0 6px 20px 1px #fff;
    }
 }
 
@@ -53,4 +54,9 @@ button:hover {
 
 #col-last {
   border-radius: 0px 10px 10px 0px;
+}
+
+.all__palettes-div {
+  background-color: #ADD8E6;
+  min-height: 100vh;
 }

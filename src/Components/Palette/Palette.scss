@@ -1,16 +1,18 @@
-
-
 .palette-page {
   border: 1px solid black;
   height: 100vh;
 }
 
 .title {
-  margin-left: auto;
-  text-align: left;
-  margin: .4% 0 0 .8%;
-  color: #373F51;
-  font-size: 1.3em;
-  text-shadow: 2px 2px #f1eac7;
+  background-color: #E2E2E2;
+  color: #7C8FB0;
+  cursor: pointer;
   font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+  margin: 0px;
+  padding: 20px;
+  text-align: left;
+    &a {
+      text-decoration: none;
+    }
 }

@@ -31,7 +31,7 @@ const AllPalettes = (props) => {
     )
   })
   return (
-    <div>
+    <div className='all__palettes-div'>
       <Link to="/">
         <h1 className="title">Palette Picker</h1>
       </Link>
