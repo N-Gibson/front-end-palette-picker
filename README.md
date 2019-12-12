@@ -21,7 +21,9 @@ You will need Postgress for the server build.
 
 Once you have cloned the repos, `cd` into them and run `npm install` to install the dependencies.
 
-From there run `nodemon server.js` to start the servers.
+From there run `nodemon server.js` to start the servers on the backend.
+
+Finally run `npm start` to start the front end. 
 
 The app can be located at http://localhost:3000
 
