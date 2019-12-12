@@ -102,7 +102,7 @@ export class Palette extends Component {
         <button onClick={() => handleInfo(this.state.palettes)} onMouseEnter={this.getAllPalettes} className="nav__button--show">Show Palettes</button>
       </Link>
       <div className="nav__div--gen">
-        <h1 className="nav__name">{currentProject.toUpperCase()}</h1>
+        <h2 className="nav__name">{currentProject.toUpperCase()}</h2>
         <button onClick={this.generateColor} className="nav__button--generate">Generate</button>
       </div>
       <Form props={this.props} handleNameChange={this.handleNameChange} savePalette={this.savePalette}/>
