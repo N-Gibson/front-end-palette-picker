@@ -33,6 +33,7 @@ exports[`Colors should match the snapshot 1`] = `
   >
     <img
       alt="lock icon"
+      onClick={[Function]}
       src="locked-icon.png"
     />
     <h2
@@ -51,6 +52,7 @@ exports[`Colors should match the snapshot 1`] = `
   >
     <img
       alt="lock icon"
+      onClick={[Function]}
       src="locked-icon.png"
     />
     <h2
@@ -69,6 +71,7 @@ exports[`Colors should match the snapshot 1`] = `
   >
     <img
       alt="lock icon"
+      onClick={[Function]}
       src="locked-icon.png"
     />
     <h2
@@ -87,6 +90,7 @@ exports[`Colors should match the snapshot 1`] = `
   >
     <img
       alt="lock icon"
+      onClick={[Function]}
       src="locked-icon.png"
     />
     <h2
